@@ -1,0 +1,10 @@
+C:\Users\Admin\source\repos\Practice\Practice\obj\Debug\Practice.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\Practice\Practice\obj\Debug\Practice.ChangePassword.resources
+C:\Users\Admin\source\repos\Practice\Practice\obj\Debug\Practice.Configura.resources
+C:\Users\Admin\source\repos\Practice\Practice\obj\Debug\Practice.Dashboard.resources
+C:\Users\Admin\source\repos\Practice\Practice\obj\Debug\Practice.Facturacion.resources
+C:\Users\Admin\source\repos\Practice\Practice\obj\Debug\Practice.Login.resources
+C:\Users\Admin\source\repos\Practice\Practice\obj\Debug\Practice.Inventario.resources
+C:\Users\Admin\source\repos\Practice\Practice\obj\Debug\Practice.Properties.Resources.resources
+C:\Users\Admin\source\repos\Practice\Practice\obj\Debug\Practice.csproj.GenerateResource.cache
+C:\Users\Admin\source\repos\Practice\Practice\obj\Debug\Practice.csproj.CoreCompileInputs.cache
