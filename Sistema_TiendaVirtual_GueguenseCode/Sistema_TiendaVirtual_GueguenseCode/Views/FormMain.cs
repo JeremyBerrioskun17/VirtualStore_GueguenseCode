@@ -25,16 +25,6 @@ namespace Sistema_TiendaVirtual_GueguenseCode.Views
             LbUsuario.Text = "Usuario: " + UsuarioCache.Nombre;
         }
 
-        private void BttnDashboard_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BttnStock_Click(object sender, EventArgs e)
-        {
-            AbrirFormularioEnPanel(new FormStock());
-        }
-
         private void AbrirFormularioEnPanel(Form formularioHijo)
         {
             // Cierra el formulario anterior si hay uno abierto
@@ -67,9 +57,24 @@ namespace Sistema_TiendaVirtual_GueguenseCode.Views
             }
         }
 
-        private void BttnFacturas_Click(object sender, EventArgs e)
+        private void BttnStock_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioEnPanel(new FormStock());
+        }
+
+        private void BttnFacturacion_Click(object sender, EventArgs e)
         {
             AbrirFormularioEnPanel(new FormFactura());
+        }
+
+        private void BttnConfiguracion_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioEnPanel(new FormUsuarios());
+        }
+
+        private void BttnReportes_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioEnPanel(new FormReportes());
         }
     }
 }

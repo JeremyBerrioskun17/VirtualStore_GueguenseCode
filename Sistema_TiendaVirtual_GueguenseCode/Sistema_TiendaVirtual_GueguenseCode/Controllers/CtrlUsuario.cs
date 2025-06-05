@@ -98,5 +98,71 @@ namespace Sistema_TiendaVirtual_GueguenseCode.Controllers
             return listaUsuarios;
         }
 
+        public bool AgregarUsuario(Usuario nuevoUsuario)
+        {
+            string query = "INSERT INTO Usuarios (nombre, contraseña, tipo_usuario) VALUES (@nombre, @contraseña, @tipo)";
+
+            using (SqlConnection conexionDB = Conexion.conexion())
+            {
+                if (conexionDB != null)
+                {
+                    try
+                    {
+                        conexionDB.Open();
+
+                        SqlCommand cmd = new SqlCommand(query, conexionDB);
+                        cmd.Parameters.AddWithValue("@nombre", nuevoUsuario.Nombre.Trim());
+                        cmd.Parameters.AddWithValue("@contraseña", nuevoUsuario.Contraseña.Trim());
+                        cmd.Parameters.AddWithValue("@tipo", nuevoUsuario.Tipo_Usuario.Trim());
+
+                        int filasAfectadas = cmd.ExecuteNonQuery();
+                        return filasAfectadas > 0;
+                    }
+                    catch (SqlException ex)
+                    {
+                        Console.WriteLine("Error al agregar usuario: " + ex.Message);
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        public List<Usuario> ObtenerTodosLosUsuarios()
+        {
+            List<Usuario> listaUsuarios = new List<Usuario>();
+            string query = "SELECT id_usuario, nombre, tipo_usuario FROM Usuarios";
+
+            using (SqlConnection conexionDB = Conexion.conexion())
+            {
+                if (conexionDB != null)
+                {
+                    try
+                    {
+                        conexionDB.Open();
+                        SqlCommand cmd = new SqlCommand(query, conexionDB);
+                        SqlDataReader reader = cmd.ExecuteReader();
+
+                        while (reader.Read())
+                        {
+                            Usuario usuario = new Usuario
+                            {
+                                Id_Usuario = Convert.ToInt32(reader["id_usuario"]),
+                                Nombre = reader["nombre"].ToString(),
+                                Tipo_Usuario = reader["tipo_usuario"].ToString()
+                            };
+
+                            listaUsuarios.Add(usuario);
+                        }
+                    }
+                    catch (SqlException ex)
+                    {
+                        Console.WriteLine("Error al obtener usuarios: " + ex.Message);
+                    }
+                }
+            }
+
+            return listaUsuarios;
+        }
     }
 }

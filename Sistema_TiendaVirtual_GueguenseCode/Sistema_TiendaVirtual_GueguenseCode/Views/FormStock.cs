@@ -32,20 +32,20 @@ namespace Sistema_TiendaVirtual_GueguenseCode.Views
         private void CargarProductos()
         {
             CtrlProductos ctrlProductos = new CtrlProductos();
-
             List<Producto> productos = ctrlProductos.ObtenerProductos();
             DataGridProductos.DataSource = productos;
 
-            // Ajustar el tamaño de las columnas al contenido de cada celda
+            // Ajustar tamaño columnas
             DataGridProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
-            // Ocultar columnas 4 y 5 
-            if (DataGridProductos.Columns.Count >= 5)
+            // Ocultar columnas si es necesario
+            if (DataGridProductos.Columns.Count >= 6)
             {
-                DataGridProductos.Columns[4].Visible = false; // Columna 4
-                DataGridProductos.Columns[5].Visible = false; // Columna 5
+                DataGridProductos.Columns[4].Visible = false;
+                DataGridProductos.Columns[5].Visible = false;
             }
         }
+
 
         private void FormStock_Load(object sender, EventArgs e)
         {
@@ -53,13 +53,37 @@ namespace Sistema_TiendaVirtual_GueguenseCode.Views
             CargarProductos();
         }
 
-        private void BttnLogin_Click(object sender, EventArgs e)
+
+        private void LimpiarCampos()
+        {
+            TxtNombreProducto.Clear();
+            TxtDescripcionProducto.Clear();
+            TxtPrecioProducto.Clear();
+            CbxCategorias.SelectedIndex = 0;
+        }
+
+        private void BttnGuardarProductos_Click(object sender, EventArgs e)
         {
             CtrlProductos ctrlProductos = new CtrlProductos();
+
             // Validaciones básicas
-            if (string.IsNullOrWhiteSpace(TxtNombreProducto.Text) || string.IsNullOrWhiteSpace(TxtPrecioProducto.Text))
+            if (string.IsNullOrWhiteSpace(TxtNombreProducto.Text) ||
+                string.IsNullOrWhiteSpace(TxtPrecioProducto.Text) ||
+                string.IsNullOrWhiteSpace(TxtCantidad.Text))
             {
-                MessageBox.Show("Por favor completa el nombre y precio.");
+                MessageBox.Show("Por favor completa el nombre, precio y cantidad.");
+                return;
+            }
+
+            if (!decimal.TryParse(TxtPrecioProducto.Text, out decimal precio) || precio < 0)
+            {
+                MessageBox.Show("Precio inválido.");
+                return;
+            }
+
+            if (!int.TryParse(TxtCantidad.Text, out int cantidad) || cantidad < 0)
+            {
+                MessageBox.Show("Cantidad inválida.");
                 return;
             }
 
@@ -67,8 +91,9 @@ namespace Sistema_TiendaVirtual_GueguenseCode.Views
             {
                 Nombre = TxtNombreProducto.Text,
                 Descripcion = TxtDescripcionProducto.Text,
-                Precio = decimal.Parse(TxtPrecioProducto.Text),
-                IdCategoria = Convert.ToInt32(CbxCategorias.SelectedValue)
+                Precio = precio,
+                IdCategoria = Convert.ToInt32(CbxCategorias.SelectedValue),
+                Cantidad = cantidad
             };
 
             bool exito = ctrlProductos.AgregarProducto(nuevoProducto);
@@ -77,20 +102,32 @@ namespace Sistema_TiendaVirtual_GueguenseCode.Views
             {
                 MessageBox.Show("Producto guardado correctamente.");
                 LimpiarCampos();
-                CargarProductos(); // Recargar el grid
             }
             else
             {
                 MessageBox.Show("Error al guardar el producto.");
             }
+            CargarProductos(); // Recargar el grid
         }
 
-        private void LimpiarCampos()
+        private void DataGridProductos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            TxtNombreProducto.Clear();
-            TxtDescripcionProducto.Clear();
-            TxtPrecioProducto.Clear();
-            CbxCategorias.SelectedIndex = 0;
+            if (DataGridProductos.Columns[e.ColumnIndex].Name == "Cantidad")
+            {
+                if (e.Value != null && int.TryParse(e.Value.ToString(), out int cantidad))
+                {
+                    if (cantidad < 5)
+                    {
+                        e.CellStyle.BackColor = Color.Red;
+                        e.CellStyle.ForeColor = Color.White;
+                    }
+                    else
+                    {
+                        e.CellStyle.BackColor = Color.LightGreen;
+                        e.CellStyle.ForeColor = Color.Black;
+                    }
+                }
+            }
         }
     }
 }

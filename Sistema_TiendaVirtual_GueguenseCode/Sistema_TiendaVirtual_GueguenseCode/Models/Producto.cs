@@ -15,6 +15,7 @@ namespace Sistema_TiendaVirtual_GueguenseCode.Models
         public bool Status { get; set; }            
         public int IdCategoria { get; set; }       
         public string NombreCategoria { get; set; }
+        public int Cantidad { get; set; }
     }
 
 }
