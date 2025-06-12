@@ -17,6 +17,11 @@ namespace Sistema_TiendaVirtual_GueguenseCode.Views
     {
         private System.Windows.Forms.Timer timerFechaHora;
 
+        private DataGridViewRow filaSeleccionada;
+
+        // Menú contextual
+        private ContextMenuStrip contextMenuFactura;
+        private ToolStripMenuItem quitarDeFacturaToolStripMenuItem;
 
         public FormFactura()
         {
@@ -176,7 +181,93 @@ namespace Sistema_TiendaVirtual_GueguenseCode.Views
             ActualizarSubtotal(); // se recalcula todo automáticamente
         }
 
-        private void BttnFacturacion_Click(object sender, EventArgs e)
+        private void TztDescuento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir dígitos, control (como backspace) y un solo punto decimal
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true; // bloquear
+            }
+
+            // Solo permitir un punto decimal
+            if (e.KeyChar == '.' && TxtDescuento.Text.Contains("."))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir dígitos, control (como backspace) y un solo punto decimal
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true; // bloquear
+            }
+
+            // Solo permitir un punto decimal
+            if (e.KeyChar == '.' && TxtCantidad.Text.Contains("."))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void DtProductos_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                if (e.Button == MouseButtons.Right &&
+                    e.RowIndex >= 0 &&
+                    e.RowIndex < DtProductos.Rows.Count &&
+                    !DtProductos.Rows[e.RowIndex].IsNewRow)
+                {
+                    DtProductos.ClearSelection();
+                    DtProductos.Rows[e.RowIndex].Selected = true;
+                    filaSeleccionada = DtProductos.Rows[e.RowIndex];
+
+                    // Mostrar el menú contextual en la posición del mouse
+                    contextMenuFactura.Show(Cursor.Position);
+                }
+                else
+                {
+                    filaSeleccionada = null;
+                    contextMenuFactura.Close(); // Por si estaba abierto
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al intentar mostrar el menú: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void quitarDeFacturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (filaSeleccionada != null && DtProductos.Rows.Contains(filaSeleccionada))
+            {
+                DtProductos.Rows.Remove(filaSeleccionada);
+                filaSeleccionada = null;
+                ActualizarSubtotal();
+            }
+        }
+
+        private void FormFactura_Load(object sender, EventArgs e)
+        {
+            // Crear menú contextual
+            contextMenuFactura = new ContextMenuStrip();
+            quitarDeFacturaToolStripMenuItem = new ToolStripMenuItem("Quitar de la factura");
+
+            // Asociar evento
+            quitarDeFacturaToolStripMenuItem.Click += quitarDeFacturaToolStripMenuItem_Click;
+
+            // Agregar item al menú
+            contextMenuFactura.Items.Add(quitarDeFacturaToolStripMenuItem);
+
+            // Asignar el menú al DataGridView
+            DtProductos.ContextMenuStrip = contextMenuFactura;
+
+            DtProductos.AllowUserToAddRows = false;
+        }
+
+        private void BttnFacturacion_Click_1(object sender, EventArgs e)
         {
             if (DtProductos.Rows.Count == 0)
             {
@@ -245,36 +336,6 @@ namespace Sistema_TiendaVirtual_GueguenseCode.Views
             catch (Exception ex)
             {
                 MessageBox.Show("Error al facturar: " + ex.Message, "Error");
-            }
-        }
-
-        private void TztDescuento_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Permitir dígitos, control (como backspace) y un solo punto decimal
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
-            {
-                e.Handled = true; // bloquear
-            }
-
-            // Solo permitir un punto decimal
-            if (e.KeyChar == '.' && TxtDescuento.Text.Contains("."))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void TxtCantidad_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Permitir dígitos, control (como backspace) y un solo punto decimal
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
-            {
-                e.Handled = true; // bloquear
-            }
-
-            // Solo permitir un punto decimal
-            if (e.KeyChar == '.' && TxtCantidad.Text.Contains("."))
-            {
-                e.Handled = true;
             }
         }
     }

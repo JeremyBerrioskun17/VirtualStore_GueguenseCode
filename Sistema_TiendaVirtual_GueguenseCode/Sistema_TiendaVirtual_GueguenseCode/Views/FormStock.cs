@@ -14,6 +14,7 @@ namespace Sistema_TiendaVirtual_GueguenseCode.Views
 {
     public partial class FormStock : Form
     {
+        private ContextMenuStrip menuProductos;
         public FormStock()
         {
             InitializeComponent();
@@ -41,7 +42,7 @@ namespace Sistema_TiendaVirtual_GueguenseCode.Views
             // Ocultar columnas si es necesario
             if (DataGridProductos.Columns.Count >= 6)
             {
-                DataGridProductos.Columns[4].Visible = false;
+                //DataGridProductos.Columns[4].Visible = false;
                 DataGridProductos.Columns[5].Visible = false;
             }
         }
@@ -51,6 +52,7 @@ namespace Sistema_TiendaVirtual_GueguenseCode.Views
         {
             CargarComboboxCategorias();
             CargarProductos();
+            CrearMenuContextual();
         }
 
 
@@ -61,6 +63,22 @@ namespace Sistema_TiendaVirtual_GueguenseCode.Views
             TxtPrecioProducto.Clear();
             CbxCategorias.SelectedIndex = 0;
         }
+
+ 
+
+        private void CrearMenuContextual()
+        {
+            menuProductos = new ContextMenuStrip();
+
+
+            ToolStripMenuItem opcionEliminar = new ToolStripMenuItem("Cmbiar Estado del Producto");
+            opcionEliminar.Click += OpcionEliminar_Click;
+
+            menuProductos.Items.Add(opcionEliminar);
+
+            DataGridProductos.ContextMenuStrip = menuProductos;
+        }
+
 
         private void BttnGuardarProductos_Click(object sender, EventArgs e)
         {
@@ -127,6 +145,69 @@ namespace Sistema_TiendaVirtual_GueguenseCode.Views
                         e.CellStyle.ForeColor = Color.Black;
                     }
                 }
+            }
+        }
+
+        private void DataGridProductos_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                try
+                {
+                    var hit = DataGridProductos.HitTest(e.X, e.Y);
+                    if (hit.RowIndex >= 0 && DataGridProductos.Rows[hit.RowIndex].Cells[0].Value != null)
+                    {
+                        DataGridProductos.ClearSelection();
+                        DataGridProductos.Rows[hit.RowIndex].Selected = true;
+                        menuProductos.Show(DataGridProductos, e.Location);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al mostrar el menú contextual: " + ex.Message);
+                }
+            }
+        }
+        private void OpcionEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (DataGridProductos.SelectedRows.Count > 0)
+                {
+                    var fila = DataGridProductos.SelectedRows[0];
+                    int idProducto = Convert.ToInt32(fila.Cells["IdProducto"].Value);
+                    DialogResult confirm = MessageBox.Show("¿Deseas cambiar el estado de este producto?", "Confirmación", MessageBoxButtons.YesNo);
+
+                    if (confirm == DialogResult.Yes)
+                    {
+                        CtrlProductos ctrl = new CtrlProductos();
+                        bool eliminado = ctrl.EliminarProducto(idProducto); 
+
+                        if (eliminado)
+                        {
+                            MessageBox.Show("Producto actializado correctamente.");
+                            CargarProductos();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se pudo actializado el producto.");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al deshabilitar producto: " + ex.Message);
+            }
+        }
+
+        private void DataGridProductos_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right && e.RowIndex >= 0)
+            {
+                DataGridProductos.ClearSelection(); // Limpia selección anterior
+                DataGridProductos.Rows[e.RowIndex].Selected = true; // Selecciona la fila actual
+                menuProductos.Show(Cursor.Position); // Muestra menú contextual donde esté el cursor
             }
         }
     }

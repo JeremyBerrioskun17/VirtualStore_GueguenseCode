@@ -40,7 +40,7 @@ namespace Sistema_TiendaVirtual_GueguenseCode.Views
 
                     lblCodigoFactura.Text = "N° Factura: " + idFactura.ToString();
                     lblFechaFactura.Text = Convert.ToDateTime(filaFactura["Fecha"]).ToString("dd/MM/yyyy");
-                    lblTotalFactura.Text = Convert.ToDecimal(filaFactura["Total"]).ToString("C2"); // Formato moneda
+                    lblTotalFactura.Text = "C$ " + Convert.ToDecimal(filaFactura["Total"]).ToString();
 
                     // Cargar detalles en el DataGridView
                     DTDetalleFactura.DataSource = detalles;

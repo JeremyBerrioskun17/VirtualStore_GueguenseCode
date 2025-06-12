@@ -28,8 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFactura));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel34 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -39,8 +44,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.LbFecha = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel36 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.TxtNombreCliente = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -72,7 +78,10 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.panel23 = new System.Windows.Forms.Panel();
+            this.panel37 = new System.Windows.Forms.Panel();
             this.BttnFacturacion = new System.Windows.Forms.Button();
+            this.panel39 = new System.Windows.Forms.Panel();
+            this.panel38 = new System.Windows.Forms.Panel();
             this.panel30 = new System.Windows.Forms.Panel();
             this.LbTotal = new System.Windows.Forms.Label();
             this.panel31 = new System.Windows.Forms.Panel();
@@ -88,8 +97,12 @@
             this.panel25 = new System.Windows.Forms.Panel();
             this.panel24 = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.DtProductos = new System.Windows.Forms.DataGridView();
+            this.panel35 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -104,13 +117,19 @@
             this.panel13.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.panel23.SuspendLayout();
+            this.panel37.SuspendLayout();
             this.panel22.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DtProductos)).BeginInit();
+            this.panel35.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(224)))));
             this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.panel34);
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -123,12 +142,32 @@
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(10, 0);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(108)))), ((int)(((byte)(56)))));
+            this.label1.Location = new System.Drawing.Point(95, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(388, 67);
-            this.label1.TabIndex = 4;
+            this.label1.Size = new System.Drawing.Size(297, 67);
+            this.label1.TabIndex = 7;
             this.label1.Text = "Panel de Facturación";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel34
+            // 
+            this.panel34.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel34.Location = new System.Drawing.Point(85, 0);
+            this.panel34.Name = "panel34";
+            this.panel34.Size = new System.Drawing.Size(10, 67);
+            this.panel34.TabIndex = 6;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(10, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(75, 67);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // panel3
             // 
@@ -153,6 +192,7 @@
             // 
             this.groupBox2.Controls.Add(this.panel9);
             this.groupBox2.Controls.Add(this.panel8);
+            this.groupBox2.Controls.Add(this.panel1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(398, 0);
             this.groupBox2.Name = "groupBox2";
@@ -166,10 +206,10 @@
             this.panel9.Controls.Add(this.panel10);
             this.panel9.Controls.Add(this.label6);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel9.Location = new System.Drawing.Point(442, 28);
+            this.panel9.Location = new System.Drawing.Point(710, 28);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(414, 129);
-            this.panel9.TabIndex = 10;
+            this.panel9.Size = new System.Drawing.Size(258, 129);
+            this.panel9.TabIndex = 12;
             // 
             // LbHora
             // 
@@ -186,7 +226,7 @@
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel10.Location = new System.Drawing.Point(0, 24);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(414, 10);
+            this.panel10.Size = new System.Drawing.Size(258, 10);
             this.panel10.TabIndex = 10;
             // 
             // label6
@@ -202,13 +242,13 @@
             // panel8
             // 
             this.panel8.Controls.Add(this.LbFecha);
-            this.panel8.Controls.Add(this.panel1);
+            this.panel8.Controls.Add(this.panel36);
             this.panel8.Controls.Add(this.label3);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel8.Location = new System.Drawing.Point(3, 28);
+            this.panel8.Location = new System.Drawing.Point(557, 28);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(439, 129);
-            this.panel8.TabIndex = 9;
+            this.panel8.Size = new System.Drawing.Size(153, 129);
+            this.panel8.TabIndex = 11;
             // 
             // LbFecha
             // 
@@ -220,13 +260,13 @@
             this.LbFecha.TabIndex = 11;
             this.LbFecha.Text = "20-05-2025";
             // 
-            // panel1
+            // panel36
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 24);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(439, 10);
-            this.panel1.TabIndex = 10;
+            this.panel36.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel36.Location = new System.Drawing.Point(0, 24);
+            this.panel36.Name = "panel36";
+            this.panel36.Size = new System.Drawing.Size(153, 10);
+            this.panel36.TabIndex = 10;
             // 
             // label3
             // 
@@ -237,6 +277,14 @@
             this.label3.Size = new System.Drawing.Size(62, 24);
             this.label3.TabIndex = 9;
             this.label3.Text = "Fecha";
+            // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(3, 28);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(554, 129);
+            this.panel1.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -254,6 +302,7 @@
             // 
             // TxtNombreCliente
             // 
+            this.TxtNombreCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(161)))), ((int)(((byte)(94)))));
             this.TxtNombreCliente.Dock = System.Windows.Forms.DockStyle.Top;
             this.TxtNombreCliente.Location = new System.Drawing.Point(20, 72);
             this.TxtNombreCliente.Name = "TxtNombreCliente";
@@ -327,17 +376,23 @@
             this.panel33.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel33.Location = new System.Drawing.Point(1031, 38);
             this.panel33.Name = "panel33";
-            this.panel33.Size = new System.Drawing.Size(196, 97);
+            this.panel33.Size = new System.Drawing.Size(194, 97);
             this.panel33.TabIndex = 16;
             // 
             // BttnAgregarCarrito
             // 
+            this.BttnAgregarCarrito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(148)))), ((int)(((byte)(89)))));
+            this.BttnAgregarCarrito.FlatAppearance.BorderSize = 0;
+            this.BttnAgregarCarrito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BttnAgregarCarrito.Image = ((System.Drawing.Image)(resources.GetObject("BttnAgregarCarrito.Image")));
+            this.BttnAgregarCarrito.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BttnAgregarCarrito.Location = new System.Drawing.Point(25, 18);
             this.BttnAgregarCarrito.Name = "BttnAgregarCarrito";
-            this.BttnAgregarCarrito.Size = new System.Drawing.Size(150, 63);
+            this.BttnAgregarCarrito.Size = new System.Drawing.Size(157, 63);
             this.BttnAgregarCarrito.TabIndex = 0;
-            this.BttnAgregarCarrito.Text = "Agregar a Carrito\r\n";
-            this.BttnAgregarCarrito.UseVisualStyleBackColor = true;
+            this.BttnAgregarCarrito.Text = "Agregar a \r\nCarrito\r\n";
+            this.BttnAgregarCarrito.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BttnAgregarCarrito.UseVisualStyleBackColor = false;
             this.BttnAgregarCarrito.Click += new System.EventHandler(this.BttnAgregarCarrito_Click);
             // 
             // panel21
@@ -353,13 +408,13 @@
             // 
             // LbCantidad
             // 
-            this.LbCantidad.AutoSize = true;
             this.LbCantidad.Dock = System.Windows.Forms.DockStyle.Top;
             this.LbCantidad.Location = new System.Drawing.Point(0, 34);
             this.LbCantidad.Name = "LbCantidad";
-            this.LbCantidad.Size = new System.Drawing.Size(21, 24);
+            this.LbCantidad.Size = new System.Drawing.Size(164, 24);
             this.LbCantidad.TabIndex = 14;
             this.LbCantidad.Text = "4";
+            this.LbCantidad.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel32
             // 
@@ -371,13 +426,13 @@
             // 
             // label11
             // 
-            this.label11.AutoSize = true;
             this.label11.Dock = System.Windows.Forms.DockStyle.Top;
             this.label11.Location = new System.Drawing.Point(0, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(118, 24);
+            this.label11.Size = new System.Drawing.Size(164, 24);
             this.label11.TabIndex = 12;
             this.label11.Text = "Cant. Stock:";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel19
             // 
@@ -392,13 +447,13 @@
             // 
             // LbPrecio
             // 
-            this.LbPrecio.AutoSize = true;
             this.LbPrecio.Dock = System.Windows.Forms.DockStyle.Top;
             this.LbPrecio.Location = new System.Drawing.Point(0, 34);
             this.LbPrecio.Name = "LbPrecio";
-            this.LbPrecio.Size = new System.Drawing.Size(89, 24);
+            this.LbPrecio.Size = new System.Drawing.Size(186, 24);
             this.LbPrecio.TabIndex = 11;
             this.LbPrecio.Text = "C$ 45.89";
+            this.LbPrecio.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panel20
             // 
@@ -410,13 +465,13 @@
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
             this.label9.Dock = System.Windows.Forms.DockStyle.Top;
             this.label9.Location = new System.Drawing.Point(0, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(71, 24);
+            this.label9.Size = new System.Drawing.Size(186, 24);
             this.label9.TabIndex = 9;
             this.label9.Text = "Precio:";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel18
             // 
@@ -439,6 +494,7 @@
             // 
             // TxtCantidad
             // 
+            this.TxtCantidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(161)))), ((int)(((byte)(94)))));
             this.TxtCantidad.Dock = System.Windows.Forms.DockStyle.Top;
             this.TxtCantidad.Location = new System.Drawing.Point(0, 34);
             this.TxtCantidad.Name = "TxtCantidad";
@@ -485,6 +541,7 @@
             // 
             // CbxProductos
             // 
+            this.CbxProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(161)))), ((int)(((byte)(94)))));
             this.CbxProductos.Dock = System.Windows.Forms.DockStyle.Top;
             this.CbxProductos.FormattingEnabled = true;
             this.CbxProductos.Location = new System.Drawing.Point(0, 34);
@@ -532,7 +589,7 @@
             // 
             // panel23
             // 
-            this.panel23.Controls.Add(this.BttnFacturacion);
+            this.panel23.Controls.Add(this.panel37);
             this.panel23.Controls.Add(this.panel30);
             this.panel23.Controls.Add(this.LbTotal);
             this.panel23.Controls.Add(this.panel31);
@@ -553,22 +610,56 @@
             this.panel23.Size = new System.Drawing.Size(590, 338);
             this.panel23.TabIndex = 1;
             // 
+            // panel37
+            // 
+            this.panel37.Controls.Add(this.BttnFacturacion);
+            this.panel37.Controls.Add(this.panel39);
+            this.panel37.Controls.Add(this.panel38);
+            this.panel37.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel37.Location = new System.Drawing.Point(24, 250);
+            this.panel37.Name = "panel37";
+            this.panel37.Size = new System.Drawing.Size(566, 88);
+            this.panel37.TabIndex = 26;
+            // 
             // BttnFacturacion
             // 
-            this.BttnFacturacion.Location = new System.Drawing.Point(30, 263);
+            this.BttnFacturacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(148)))), ((int)(((byte)(89)))));
+            this.BttnFacturacion.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BttnFacturacion.FlatAppearance.BorderSize = 0;
+            this.BttnFacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BttnFacturacion.Image = ((System.Drawing.Image)(resources.GetObject("BttnFacturacion.Image")));
+            this.BttnFacturacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BttnFacturacion.Location = new System.Drawing.Point(20, 0);
             this.BttnFacturacion.Name = "BttnFacturacion";
-            this.BttnFacturacion.Size = new System.Drawing.Size(133, 66);
-            this.BttnFacturacion.TabIndex = 25;
+            this.BttnFacturacion.Size = new System.Drawing.Size(183, 75);
+            this.BttnFacturacion.TabIndex = 28;
             this.BttnFacturacion.Text = "Realizar Facturación";
-            this.BttnFacturacion.UseVisualStyleBackColor = true;
-            this.BttnFacturacion.Click += new System.EventHandler(this.BttnFacturacion_Click);
+            this.BttnFacturacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BttnFacturacion.UseVisualStyleBackColor = false;
+            this.BttnFacturacion.Click += new System.EventHandler(this.BttnFacturacion_Click_1);
+            // 
+            // panel39
+            // 
+            this.panel39.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel39.Location = new System.Drawing.Point(20, 75);
+            this.panel39.Name = "panel39";
+            this.panel39.Size = new System.Drawing.Size(546, 13);
+            this.panel39.TabIndex = 27;
+            // 
+            // panel38
+            // 
+            this.panel38.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel38.Location = new System.Drawing.Point(0, 0);
+            this.panel38.Name = "panel38";
+            this.panel38.Size = new System.Drawing.Size(20, 88);
+            this.panel38.TabIndex = 26;
             // 
             // panel30
             // 
             this.panel30.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel30.Location = new System.Drawing.Point(24, 228);
             this.panel30.Name = "panel30";
-            this.panel30.Size = new System.Drawing.Size(566, 10);
+            this.panel30.Size = new System.Drawing.Size(566, 22);
             this.panel30.TabIndex = 24;
             // 
             // LbTotal
@@ -645,6 +736,7 @@
             // 
             // TxtDescuento
             // 
+            this.TxtDescuento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(161)))), ((int)(((byte)(94)))));
             this.TxtDescuento.Dock = System.Windows.Forms.DockStyle.Top;
             this.TxtDescuento.Location = new System.Drawing.Point(24, 60);
             this.TxtDescuento.Name = "TxtDescuento";
@@ -689,30 +781,81 @@
             // 
             // panel22
             // 
-            this.panel22.Controls.Add(this.DtProductos);
+            this.panel22.Controls.Add(this.groupBox5);
             this.panel22.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel22.Location = new System.Drawing.Point(3, 28);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(837, 338);
             this.panel22.TabIndex = 0;
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.DtProductos);
+            this.groupBox5.Controls.Add(this.panel35);
+            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox5.Location = new System.Drawing.Point(0, 0);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(837, 338);
+            this.groupBox5.TabIndex = 3;
+            this.groupBox5.TabStop = false;
+            // 
             // DtProductos
             // 
-            this.DtProductos.BackgroundColor = System.Drawing.Color.White;
+            this.DtProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DtProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DtProductos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(161)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(161)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DtProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DtProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(161)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DtProductos.DefaultCellStyle = dataGridViewCellStyle2;
             this.DtProductos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DtProductos.GridColor = System.Drawing.Color.White;
-            this.DtProductos.Location = new System.Drawing.Point(0, 0);
+            this.DtProductos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(161)))), ((int)(((byte)(94)))));
+            this.DtProductos.Location = new System.Drawing.Point(3, 64);
             this.DtProductos.Name = "DtProductos";
             this.DtProductos.RowHeadersWidth = 51;
             this.DtProductos.RowTemplate.Height = 24;
-            this.DtProductos.Size = new System.Drawing.Size(837, 338);
-            this.DtProductos.TabIndex = 0;
+            this.DtProductos.Size = new System.Drawing.Size(831, 271);
+            this.DtProductos.TabIndex = 3;
+            this.DtProductos.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DtProductos_CellMouseDown);
+            // 
+            // panel35
+            // 
+            this.panel35.Controls.Add(this.label5);
+            this.panel35.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel35.Location = new System.Drawing.Point(3, 28);
+            this.panel35.Name = "panel35";
+            this.panel35.Size = new System.Drawing.Size(831, 36);
+            this.panel35.TabIndex = 2;
+            // 
+            // label5
+            // 
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(0, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(831, 36);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Tabla de Facturación";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1433, 734);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.panel11);
@@ -722,7 +865,9 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormFactura";
             this.Text = "Factura";
+            this.Load += new System.EventHandler(this.FormFactura_Load);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
@@ -735,9 +880,7 @@
             this.groupBox3.ResumeLayout(false);
             this.panel33.ResumeLayout(false);
             this.panel21.ResumeLayout(false);
-            this.panel21.PerformLayout();
             this.panel19.ResumeLayout(false);
-            this.panel19.PerformLayout();
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
             this.panel13.ResumeLayout(false);
@@ -745,8 +888,11 @@
             this.groupBox4.ResumeLayout(false);
             this.panel23.ResumeLayout(false);
             this.panel23.PerformLayout();
+            this.panel37.ResumeLayout(false);
             this.panel22.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DtProductos)).EndInit();
+            this.panel35.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -754,7 +900,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -764,14 +909,6 @@
         private System.Windows.Forms.TextBox TxtNombreCliente;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label LbHora;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label LbFecha;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Panel panel16;
@@ -794,13 +931,11 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Panel panel22;
         private System.Windows.Forms.Panel panel23;
-        private System.Windows.Forms.DataGridView DtProductos;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel25;
         private System.Windows.Forms.Panel panel24;
         private System.Windows.Forms.TextBox TxtDescuento;
         private System.Windows.Forms.Panel panel26;
-        private System.Windows.Forms.Button BttnFacturacion;
         private System.Windows.Forms.Panel panel30;
         private System.Windows.Forms.Label LbTotal;
         private System.Windows.Forms.Panel panel31;
@@ -814,5 +949,25 @@
         private System.Windows.Forms.Label LbCantidad;
         private System.Windows.Forms.Panel panel32;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel34;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.DataGridView DtProductos;
+        private System.Windows.Forms.Panel panel35;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label LbHora;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label LbFecha;
+        private System.Windows.Forms.Panel panel36;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel37;
+        private System.Windows.Forms.Button BttnFacturacion;
+        private System.Windows.Forms.Panel panel39;
+        private System.Windows.Forms.Panel panel38;
     }
 }

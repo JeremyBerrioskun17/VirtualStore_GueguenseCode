@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Sistema_TiendaVirtual_GueguenseCode.Controllers
 {
@@ -65,10 +66,16 @@ namespace Sistema_TiendaVirtual_GueguenseCode.Controllers
             a.descripcion AS [Desc Producto],
             a.precio AS [Precio Producto],
             b.nombre AS [Nombre Categoria],
-            ISNULL(c.cantidad, 0) AS [Cantidad]
+            ISNULL(c.cantidad, 0) AS [Cantidad],
+            CASE 
+                WHEN a.[status] = 1 THEN 'Habilitado'
+                WHEN a.[status] = 0 THEN 'Deshabilitado'
+                ELSE 'Desconocido'
+            END AS [Estado]
         FROM Productos a
         INNER JOIN Categorias b ON a.id_categoria = b.id_categoria
-        LEFT JOIN Inventarios c ON a.id_producto = c.id_producto";
+        LEFT JOIN Inventarios c ON a.id_producto = c.id_producto;
+        ";
 
             using (SqlConnection conexionDB = Conexion.conexion())
             {
@@ -89,7 +96,9 @@ namespace Sistema_TiendaVirtual_GueguenseCode.Controllers
                                 Descripcion = reader["Desc Producto"].ToString(),
                                 Precio = Convert.ToDecimal(reader["Precio Producto"]),
                                 NombreCategoria = reader["Nombre Categoria"].ToString(),
-                                Cantidad = Convert.ToInt32(reader["Cantidad"])
+                                Cantidad = Convert.ToInt32(reader["Cantidad"]),
+                                Status = reader["Estado"].ToString()
+
                             });
                         }
                     }
@@ -144,7 +153,6 @@ namespace Sistema_TiendaVirtual_GueguenseCode.Controllers
         public bool EliminarProducto(int idProducto)
         {
             bool resultado = false;
-            string query = "DELETE FROM Productos WHERE id_producto = @id_producto";
 
             using (SqlConnection conexionDB = Conexion.conexion())
             {
@@ -153,20 +161,32 @@ namespace Sistema_TiendaVirtual_GueguenseCode.Controllers
                     try
                     {
                         conexionDB.Open();
-                        SqlCommand cmd = new SqlCommand(query, conexionDB);
-                        cmd.Parameters.AddWithValue("@id_producto", idProducto);
 
-                        resultado = cmd.ExecuteNonQuery() > 0;
+                        using (SqlCommand cmd = new SqlCommand("CambiarEstadoProductoPorId", conexionDB))
+                        {
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@id_producto", idProducto);
+
+                            int filasAfectadas = Convert.ToInt32(cmd.ExecuteScalar());
+
+                            resultado = filasAfectadas > 0;
+                        }
+
                     }
                     catch (SqlException ex)
                     {
                         Console.WriteLine("Error al eliminar producto: " + ex.Message);
+                        resultado = false;
                     }
                 }
             }
 
             return resultado;
         }
+
+
+
+
 
         // Obtener un solo producto por ID
         public Producto ObtenerProductoPorId(int idProducto)
@@ -194,7 +214,7 @@ namespace Sistema_TiendaVirtual_GueguenseCode.Controllers
                                 Nombre = reader["nombre"].ToString(),
                                 Descripcion = reader["descripcion"].ToString(),
                                 Precio = Convert.ToDecimal(reader["precio"]),
-                                Status = Convert.ToBoolean(reader["status"]),
+                                Status = (reader["status"]).ToString(),
                                 IdCategoria = Convert.ToInt32(reader["id_categoria"])
                             };
                         }
@@ -212,7 +232,7 @@ namespace Sistema_TiendaVirtual_GueguenseCode.Controllers
         public List<Producto> ObtenerProductosCombo()
         {
             List<Producto> productos = new List<Producto>();
-            string query = "SELECT id_producto, nombre, precio FROM Productos";
+            string query = "SELECT id_producto, nombre, precio FROM Productos where [status] = 1 ";
 
             using (SqlConnection conexionDB = Conexion.conexion())
             {

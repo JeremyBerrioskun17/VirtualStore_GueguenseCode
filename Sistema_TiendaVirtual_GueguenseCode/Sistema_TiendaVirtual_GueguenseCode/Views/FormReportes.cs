@@ -81,10 +81,6 @@ namespace Sistema_TiendaVirtual_GueguenseCode.Views
             }
         }
 
-        private void BttnExport_Click(object sender, EventArgs e)
-        {
-            ExportarDataGridViewAExcel(DtReportes);
-        }
 
         private void DtReportes_MouseDown(object sender, MouseEventArgs e)
         {
@@ -124,5 +120,9 @@ namespace Sistema_TiendaVirtual_GueguenseCode.Views
             }
         }
 
+        private void BttnExport_Click(object sender, EventArgs e)
+        {
+            ExportarDataGridViewAExcel(DtReportes);
+        }
     }
 }

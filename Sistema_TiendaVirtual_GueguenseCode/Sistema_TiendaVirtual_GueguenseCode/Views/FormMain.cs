@@ -76,5 +76,10 @@ namespace Sistema_TiendaVirtual_GueguenseCode.Views
         {
             AbrirFormularioEnPanel(new FormReportes());
         }
+
+        private void BttnDashboard_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioEnPanel(new FormDashboard());
+        }
     }
 }

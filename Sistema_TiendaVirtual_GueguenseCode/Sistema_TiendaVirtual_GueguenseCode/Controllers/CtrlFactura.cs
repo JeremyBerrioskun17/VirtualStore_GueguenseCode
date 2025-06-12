@@ -119,10 +119,11 @@ namespace Sistema_TiendaVirtual_GueguenseCode.Controllers
                         conexionDB.Open();
 
                         string query = @"
-                    SELECT f.id_factura, f.fecha, f.total, d.cantidad, d.precio_unitario
-                     FROM Facturas f
-                     INNER JOIN Detalles_Factura d ON f.id_factura = d.id_factura
-                     WHERE f.id_factura = @id_factura";
+                    SELECT f.id_factura, f.fecha, c.nombre, d.cantidad, d.precio_unitario, f.total
+                      FROM Facturas f
+                      INNER JOIN Detalles_Factura d ON f.id_factura = d.id_factura
+                      INNER JOIN Productos c ON d.id_Producto = c.id_Producto
+                      WHERE f.id_factura = @id_factura";
 
                         using (SqlCommand cmd = new SqlCommand(query, conexionDB))
                         {

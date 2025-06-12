@@ -12,7 +12,7 @@ namespace Sistema_TiendaVirtual_GueguenseCode.Models
         public string Nombre { get; set; }          
         public string Descripcion { get; set; }      
         public decimal Precio { get; set; }          
-        public bool Status { get; set; }            
+        public string Status { get; set; }            
         public int IdCategoria { get; set; }       
         public string NombreCategoria { get; set; }
         public int Cantidad { get; set; }

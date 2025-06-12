@@ -53,13 +53,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.panel18 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.LbUsuario = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.PanelChildren = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -72,6 +72,8 @@
             this.panel18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.PanelChildren.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel7
@@ -85,7 +87,7 @@
             // 
             // panel8
             // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(148)))), ((int)(((byte)(89)))));
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(224)))));
             this.panel8.Controls.Add(this.panel6);
             this.panel8.Controls.Add(this.panel4);
             this.panel8.Controls.Add(this.panel5);
@@ -99,7 +101,6 @@
             this.panel8.Controls.Add(this.panel2);
             this.panel8.Controls.Add(this.panel3);
             this.panel8.Controls.Add(this.panel9);
-            this.panel8.Controls.Add(this.btnCerrarSesion);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel8.Location = new System.Drawing.Point(0, 10);
             this.panel8.Name = "panel8";
@@ -117,18 +118,21 @@
             // 
             // BttnCerrarSesion
             // 
+            this.BttnCerrarSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(148)))), ((int)(((byte)(89)))));
             this.BttnCerrarSesion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BttnCerrarSesion.FlatAppearance.BorderSize = 0;
             this.BttnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BttnCerrarSesion.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BttnCerrarSesion.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BttnCerrarSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(224)))));
+            this.BttnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("BttnCerrarSesion.Image")));
+            this.BttnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BttnCerrarSesion.Location = new System.Drawing.Point(0, 0);
             this.BttnCerrarSesion.Margin = new System.Windows.Forms.Padding(4);
             this.BttnCerrarSesion.Name = "BttnCerrarSesion";
             this.BttnCerrarSesion.Size = new System.Drawing.Size(291, 74);
             this.BttnCerrarSesion.TabIndex = 3;
             this.BttnCerrarSesion.Text = "Cerrar Sesión";
-            this.BttnCerrarSesion.UseVisualStyleBackColor = true;
+            this.BttnCerrarSesion.UseVisualStyleBackColor = false;
             // 
             // panel4
             // 
@@ -141,18 +145,22 @@
             // 
             // BttnConfiguracion
             // 
+            this.BttnConfiguracion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(148)))), ((int)(((byte)(89)))));
             this.BttnConfiguracion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BttnConfiguracion.FlatAppearance.BorderSize = 0;
             this.BttnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BttnConfiguracion.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BttnConfiguracion.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BttnConfiguracion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(224)))));
+            this.BttnConfiguracion.Image = ((System.Drawing.Image)(resources.GetObject("BttnConfiguracion.Image")));
+            this.BttnConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BttnConfiguracion.Location = new System.Drawing.Point(0, 0);
             this.BttnConfiguracion.Margin = new System.Windows.Forms.Padding(4);
             this.BttnConfiguracion.Name = "BttnConfiguracion";
             this.BttnConfiguracion.Size = new System.Drawing.Size(291, 74);
             this.BttnConfiguracion.TabIndex = 3;
-            this.BttnConfiguracion.Text = "Configuración";
-            this.BttnConfiguracion.UseVisualStyleBackColor = true;
+            this.BttnConfiguracion.Text = "      Configuración";
+            this.BttnConfiguracion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BttnConfiguracion.UseVisualStyleBackColor = false;
             this.BttnConfiguracion.Click += new System.EventHandler(this.BttnConfiguracion_Click);
             // 
             // panel5
@@ -174,18 +182,22 @@
             // 
             // BttnReportes
             // 
+            this.BttnReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(148)))), ((int)(((byte)(89)))));
             this.BttnReportes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BttnReportes.FlatAppearance.BorderSize = 0;
             this.BttnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BttnReportes.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BttnReportes.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BttnReportes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(224)))));
+            this.BttnReportes.Image = ((System.Drawing.Image)(resources.GetObject("BttnReportes.Image")));
+            this.BttnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BttnReportes.Location = new System.Drawing.Point(0, 0);
             this.BttnReportes.Margin = new System.Windows.Forms.Padding(4);
             this.BttnReportes.Name = "BttnReportes";
             this.BttnReportes.Size = new System.Drawing.Size(291, 74);
             this.BttnReportes.TabIndex = 3;
-            this.BttnReportes.Text = "Reportes";
-            this.BttnReportes.UseVisualStyleBackColor = true;
+            this.BttnReportes.Text = "      Reportes";
+            this.BttnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BttnReportes.UseVisualStyleBackColor = false;
             this.BttnReportes.Click += new System.EventHandler(this.BttnReportes_Click);
             // 
             // panel17
@@ -207,18 +219,22 @@
             // 
             // BttnFacturacion
             // 
+            this.BttnFacturacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(148)))), ((int)(((byte)(89)))));
             this.BttnFacturacion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BttnFacturacion.FlatAppearance.BorderSize = 0;
             this.BttnFacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BttnFacturacion.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BttnFacturacion.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BttnFacturacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(224)))));
+            this.BttnFacturacion.Image = ((System.Drawing.Image)(resources.GetObject("BttnFacturacion.Image")));
+            this.BttnFacturacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BttnFacturacion.Location = new System.Drawing.Point(0, 0);
             this.BttnFacturacion.Margin = new System.Windows.Forms.Padding(4);
             this.BttnFacturacion.Name = "BttnFacturacion";
             this.BttnFacturacion.Size = new System.Drawing.Size(291, 74);
             this.BttnFacturacion.TabIndex = 3;
-            this.BttnFacturacion.Text = "Facturación";
-            this.BttnFacturacion.UseVisualStyleBackColor = true;
+            this.BttnFacturacion.Text = "      Facturación";
+            this.BttnFacturacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BttnFacturacion.UseVisualStyleBackColor = false;
             this.BttnFacturacion.Click += new System.EventHandler(this.BttnFacturacion_Click);
             // 
             // panel15
@@ -240,18 +256,22 @@
             // 
             // BttnStock
             // 
+            this.BttnStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(148)))), ((int)(((byte)(89)))));
             this.BttnStock.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BttnStock.FlatAppearance.BorderSize = 0;
             this.BttnStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BttnStock.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BttnStock.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BttnStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(224)))));
+            this.BttnStock.Image = ((System.Drawing.Image)(resources.GetObject("BttnStock.Image")));
+            this.BttnStock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BttnStock.Location = new System.Drawing.Point(0, 0);
             this.BttnStock.Margin = new System.Windows.Forms.Padding(4);
             this.BttnStock.Name = "BttnStock";
             this.BttnStock.Size = new System.Drawing.Size(291, 74);
             this.BttnStock.TabIndex = 3;
-            this.BttnStock.Text = "Stock";
-            this.BttnStock.UseVisualStyleBackColor = true;
+            this.BttnStock.Text = "      Stock";
+            this.BttnStock.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BttnStock.UseVisualStyleBackColor = false;
             this.BttnStock.Click += new System.EventHandler(this.BttnStock_Click);
             // 
             // panel13
@@ -273,18 +293,23 @@
             // 
             // BttnDashboard
             // 
+            this.BttnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(148)))), ((int)(((byte)(89)))));
             this.BttnDashboard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BttnDashboard.FlatAppearance.BorderSize = 0;
             this.BttnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BttnDashboard.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BttnDashboard.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BttnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(224)))));
+            this.BttnDashboard.Image = ((System.Drawing.Image)(resources.GetObject("BttnDashboard.Image")));
+            this.BttnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BttnDashboard.Location = new System.Drawing.Point(0, 0);
             this.BttnDashboard.Margin = new System.Windows.Forms.Padding(4);
             this.BttnDashboard.Name = "BttnDashboard";
             this.BttnDashboard.Size = new System.Drawing.Size(291, 74);
             this.BttnDashboard.TabIndex = 3;
-            this.BttnDashboard.Text = "Dashboard";
-            this.BttnDashboard.UseVisualStyleBackColor = true;
+            this.BttnDashboard.Text = "      Dashboard";
+            this.BttnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BttnDashboard.UseVisualStyleBackColor = false;
+            this.BttnDashboard.Click += new System.EventHandler(this.BttnDashboard_Click);
             // 
             // panel2
             // 
@@ -346,19 +371,6 @@
             this.panel10.Size = new System.Drawing.Size(19, 85);
             this.panel10.TabIndex = 1;
             // 
-            // btnCerrarSesion
-            // 
-            this.btnCerrarSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(148)))), ((int)(((byte)(89)))));
-            this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
-            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(224)))));
-            this.btnCerrarSesion.Location = new System.Drawing.Point(65, 772);
-            this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(226, 56);
-            this.btnCerrarSesion.TabIndex = 19;
-            this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarSesion.UseVisualStyleBackColor = false;
-            // 
             // panel18
             // 
             this.panel18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(224)))));
@@ -374,16 +386,18 @@
             // pictureBox2
             // 
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox2.Location = new System.Drawing.Point(1191, 0);
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(1197, 0);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(45, 45);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 12;
             this.pictureBox2.TabStop = false;
             // 
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(1236, 0);
+            this.panel1.Location = new System.Drawing.Point(1242, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(10, 45);
             this.panel1.TabIndex = 11;
@@ -393,9 +407,9 @@
             this.LbUsuario.Dock = System.Windows.Forms.DockStyle.Right;
             this.LbUsuario.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbUsuario.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.LbUsuario.Location = new System.Drawing.Point(1246, 0);
+            this.LbUsuario.Location = new System.Drawing.Point(1252, 0);
             this.LbUsuario.Name = "LbUsuario";
-            this.LbUsuario.Size = new System.Drawing.Size(211, 45);
+            this.LbUsuario.Size = new System.Drawing.Size(205, 45);
             this.LbUsuario.TabIndex = 10;
             this.LbUsuario.Text = "label1";
             this.LbUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -413,12 +427,25 @@
             // 
             // PanelChildren
             // 
+            this.PanelChildren.Controls.Add(this.pictureBox3);
             this.PanelChildren.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelChildren.Location = new System.Drawing.Point(3, 28);
             this.PanelChildren.Margin = new System.Windows.Forms.Padding(4);
             this.PanelChildren.Name = "PanelChildren";
             this.PanelChildren.Size = new System.Drawing.Size(1451, 781);
             this.PanelChildren.TabIndex = 3;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
+            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(1451, 781);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
             // 
             // FormMain
             // 
@@ -447,6 +474,8 @@
             this.panel18.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.PanelChildren.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -458,7 +487,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Button btnCerrarSesion;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Button BttnReportes;
         private System.Windows.Forms.Panel panel17;
@@ -483,5 +511,6 @@
         private System.Windows.Forms.Label LbUsuario;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel PanelChildren;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

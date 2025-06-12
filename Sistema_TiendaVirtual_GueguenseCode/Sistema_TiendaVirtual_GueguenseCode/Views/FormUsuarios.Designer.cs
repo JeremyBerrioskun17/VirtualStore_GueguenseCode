@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -36,6 +38,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.BttnAgregarUsuario = new System.Windows.Forms.Button();
             this.CbxTipoUsuario = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,7 +50,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -69,6 +71,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(108)))), ((int)(((byte)(56)))));
             this.label5.Location = new System.Drawing.Point(12, 22);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(355, 24);
@@ -89,21 +92,40 @@
             // 
             this.groupBox1.Controls.Add(this.DtUsuarios);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 82);
+            this.groupBox1.Location = new System.Drawing.Point(0, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(753, 572);
+            this.groupBox1.Size = new System.Drawing.Size(753, 641);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Formulario de usuarios";
             // 
             // DtUsuarios
             // 
+            this.DtUsuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(161)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(161)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DtUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DtUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DtUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DtUsuarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(161)))), ((int)(((byte)(94)))));
             this.DtUsuarios.Location = new System.Drawing.Point(3, 28);
             this.DtUsuarios.Name = "DtUsuarios";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(161)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DtUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DtUsuarios.RowHeadersWidth = 51;
             this.DtUsuarios.RowTemplate.Height = 24;
-            this.DtUsuarios.Size = new System.Drawing.Size(747, 541);
+            this.DtUsuarios.Size = new System.Drawing.Size(747, 610);
             this.DtUsuarios.TabIndex = 0;
             // 
             // panel5
@@ -112,7 +134,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(753, 82);
+            this.panel5.Size = new System.Drawing.Size(753, 13);
             this.panel5.TabIndex = 1;
             // 
             // label7
@@ -120,9 +142,8 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(245, 29);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(213, 24);
+            this.label7.Size = new System.Drawing.Size(0, 24);
             this.label7.TabIndex = 2;
-            this.label7.Text = "Formulario de usuarios";
             // 
             // panel3
             // 
@@ -143,18 +164,34 @@
             this.panel3.Size = new System.Drawing.Size(680, 654);
             this.panel3.TabIndex = 2;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(218, 355);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(140, 20);
+            this.checkBox1.TabIndex = 10;
+            this.checkBox1.Text = "Mostrar contraseña";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // BttnAgregarUsuario
             // 
-            this.BttnAgregarUsuario.Location = new System.Drawing.Point(12, 491);
+            this.BttnAgregarUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(148)))), ((int)(((byte)(89)))));
+            this.BttnAgregarUsuario.FlatAppearance.BorderSize = 0;
+            this.BttnAgregarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BttnAgregarUsuario.Location = new System.Drawing.Point(16, 517);
             this.BttnAgregarUsuario.Name = "BttnAgregarUsuario";
             this.BttnAgregarUsuario.Size = new System.Drawing.Size(211, 60);
             this.BttnAgregarUsuario.TabIndex = 9;
             this.BttnAgregarUsuario.Text = "Agregar Usuario";
-            this.BttnAgregarUsuario.UseVisualStyleBackColor = true;
+            this.BttnAgregarUsuario.UseVisualStyleBackColor = false;
             this.BttnAgregarUsuario.Click += new System.EventHandler(this.BttnAgregarUsuario_Click);
             // 
             // CbxTipoUsuario
             // 
+            this.CbxTipoUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(161)))), ((int)(((byte)(94)))));
             this.CbxTipoUsuario.FormattingEnabled = true;
             this.CbxTipoUsuario.Location = new System.Drawing.Point(12, 421);
             this.CbxTipoUsuario.Name = "CbxTipoUsuario";
@@ -172,6 +209,7 @@
             // 
             // TxtContraseñaReplay
             // 
+            this.TxtContraseñaReplay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(161)))), ((int)(((byte)(94)))));
             this.TxtContraseñaReplay.Location = new System.Drawing.Point(12, 317);
             this.TxtContraseñaReplay.Name = "TxtContraseñaReplay";
             this.TxtContraseñaReplay.Size = new System.Drawing.Size(346, 32);
@@ -188,6 +226,7 @@
             // 
             // TxtContraseña
             // 
+            this.TxtContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(161)))), ((int)(((byte)(94)))));
             this.TxtContraseña.Location = new System.Drawing.Point(12, 225);
             this.TxtContraseña.Name = "TxtContraseña";
             this.TxtContraseña.Size = new System.Drawing.Size(346, 32);
@@ -204,6 +243,7 @@
             // 
             // TxtUsuario
             // 
+            this.TxtUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(161)))), ((int)(((byte)(94)))));
             this.TxtUsuario.Location = new System.Drawing.Point(12, 136);
             this.TxtUsuario.Name = "TxtUsuario";
             this.TxtUsuario.Size = new System.Drawing.Size(346, 32);
@@ -224,34 +264,25 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(680, 82);
+            this.panel4.Size = new System.Drawing.Size(680, 76);
             this.panel4.TabIndex = 0;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(245, 29);
+            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(108)))), ((int)(((byte)(56)))));
+            this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(213, 24);
+            this.label6.Size = new System.Drawing.Size(680, 76);
             this.label6.TabIndex = 2;
             this.label6.Text = "Formulario de usuarios";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(218, 355);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(140, 20);
-            this.checkBox1.TabIndex = 10;
-            this.checkBox1.Text = "Mostrar contraseña";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // FormUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1433, 734);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -271,7 +302,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
